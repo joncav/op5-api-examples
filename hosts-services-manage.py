@@ -81,3 +81,16 @@ url = "https://your-op5-install.com/api"
 # See: https://{your-op5-server}/api/help/config/change
 # r = requests.post("https://{your-op5-server}/api/config/change", verify=False, auth=(user, password), verify=False, headers={'content-type': 'application/json'})
 # print r.text
+
+#GET last status, perf_data for a single check
+# host = "host-name"
+# service = "service-name"
+# data = {
+#     "perf_data": ""
+# }
+#
+# r = requests.get(url +'/status/service/' +host +';' +service,  verify=False, auth=(user, password), headers={'content-type': 'application/json'})
+# json_data = json.loads(r.text)
+# print r.url
+# # print r.text
+# print(json_data['perf_data'])
