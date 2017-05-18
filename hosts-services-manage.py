@@ -5,10 +5,10 @@ import requests
 
 user = "user"
 password = "pass"
-url = "https://your-op5-install.com/api"
+url = "https://comcast75.eastus.cloudapp.azure.com/api"
 
 # To print the URL created by the request you're submitting
-# print r.url
+#print url
 
 # Query for host
 # See: https://{your-op5-server}/api/help/status/host
