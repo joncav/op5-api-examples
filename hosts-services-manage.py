@@ -3,17 +3,28 @@
 import json
 import requests
 
-user = "user"
-password = "pass"
-url = "https://comcast75.eastus.cloudapp.azure.com/api"
+#
+# Ignore the self-signed cert for this demonstration.
+# NOT recommended for production!
+#
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+user = "changeme"
+password = "changeme"
+hostname = "changeme"
+
+url = "https://%s/api" % (hostname)
 
 # To print the URL created by the request you're submitting
-#print url
+print url
 
 # Query for host
 # See: https://{your-op5-server}/api/help/status/host
-# r = requests.get(url +'/status/host?format=json&name=testhost', auth=(user, password), verify=False)
-# print r.text
+host = "monitor"
+r = requests.get(url +'/status/host?format=json&name=%s' % (host), auth=(user, password), verify=False)
+#print r.text
+print json.dumps(r.json(), indent=2)
 
 # Query for service on host (this is not complete yet)
 # See: https://{your-op5-server}/api/help/status/service
