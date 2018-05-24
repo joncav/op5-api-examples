@@ -1,12 +1,14 @@
 #! /usr/bin/python
 
+ # For hosts or services with special characters, be sure to URL encode the name. 
+ # For names with back slashes, you will need to double encode the slashes to escape them, / should be escaped and encoded like %2F%2F.
+
+
 import json
 import requests
 
-#
 # Ignore the self-signed cert for this demonstration.
 # NOT recommended for production!
-#
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
